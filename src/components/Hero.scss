@@ -1,0 +1,150 @@
+@use '../App' as *;
+
+
+/* Container to hold everything */
+.hero-container {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  color: $dmaroon;
+}
+
+/* The Three.js canvas behind everything */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* Let mouse events pass through to HTML */
+  z-index: -1;
+  /* Place behind main content */
+}
+
+
+/* Content sits above the canvas */
+.hero-content {
+  position: relative;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  padding-left: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+
+
+  h1 {
+    font-size: 128px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 88px;
+    font-weight: 700;
+    color: $maroon;
+
+    .typewrite-line {
+      font-weight: 200;
+    }
+  }
+
+}
+
+
+
+/* -------------------------
+   Fancy Button Styles
+   (from previous snippet)
+------------------------- */
+.btns-cont{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.btn-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+.btn-container:hover{
+  transform: scale(110%);
+}
+.connect-btn{
+    // background: #ADBBDA;
+    background: $peach;
+}
+.btn-text {
+  position: relative;
+  z-index: 2;
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.btn-bg {
+  position: absolute;
+  inset: 0;
+  transform: translateX(45%) scale(0);
+  background: #fff;
+  border-radius: 50px;
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.btn-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  z-index: 2;
+}
+
+/* Default arrow */
+.icon-default {
+  color: black;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Hover arrow */
+.icon-hover {
+  position: absolute;
+  color: black;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.btn-container:hover .btn-bg {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+.btn-container:hover .btn-text {
+  color: #000;
+}
+
+.btn-container:hover .icon-default {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.btn-container:hover .icon-hover {
+  transform: translateX(0);
+  opacity: 1;
+}

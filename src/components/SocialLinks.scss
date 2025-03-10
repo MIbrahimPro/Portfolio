@@ -1,0 +1,35 @@
+@use '../App' as *;
+
+
+.social-links {
+    position: fixed;
+    bottom: 0px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 100;
+
+    .dotted-line {
+        width: 0px;
+        height: 70px; // Adjust length as needed
+        border-left: 2px dotted grey;
+
+        margin-top: 5px;
+    }
+
+
+    a {
+        color: gray;
+        font-size: 32px;
+
+        &:hover {
+            color: $dmaroon;
+            transform: scale(110%);
+        }
+    }
+
+    
+
+}

@@ -1,0 +1,22 @@
+@use '../App' as *;
+
+
+.navbar {
+    position: fixed;
+    z-index: 100;
+    padding:36px 0px 0px 56px;
+    // backdrop-filter: blur(5px);
+    width: 100%;
+}
+.navbar-logo {
+
+    font-family: "Poppins", sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: $dmaroon;
+
+
+    .grey {
+        color: $maroon;
+    }
+}

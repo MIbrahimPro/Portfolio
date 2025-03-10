@@ -1,0 +1,57 @@
+/* Import Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+$white: #fff;
+$black: #000;
+$whitish: #fffdf5;
+$light: #ebe8db;
+$lpeach: #e09ba9;
+$peach: #D76C82;
+$maroon: #B03052;
+$dmaroon: #3D0301;
+
+
+
+
+/* Global resets (optional) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 250ms ease-in-out;
+}
+
+body {
+    width: 100%;
+    height: 100dvh;
+    overflow-x: hidden;
+    background-color: transparent;
+    cursor: none;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.cursor {
+    position: fixed;
+    z-index: 200;
+    width: 7px;
+    height: 7px;
+    background: black;
+    background-clip: content-box;
+    border-radius: 50%;
+    border: 2px solid black;
+    box-sizing: content-box;
+    padding: 8.5px;
+    pointer-events: none;
+    transform-origin: 50% 50%;
+    transition: transform 0.0s ease-out;
+    /* Smooth follow effect */
+}
+
+.app {
+    position: relative;
+}
+
+// .app{
+//     background-color: #fffdf5;
+// }
