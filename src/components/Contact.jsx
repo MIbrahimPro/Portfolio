@@ -4,7 +4,6 @@ import CopyEmail from "./CopyEmail"; // Import the CopyButton component
 import './Contact.scss'
 
 export default function Contact() {
-    const [status, setStatus] = useState("");
     const [formData, setFormData] = useState({ email: "", message: "" });
 
     const handleChange = (e) => {
