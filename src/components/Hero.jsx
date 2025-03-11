@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useEffect, useState } from "react";
+import FancyButton from "./Fancybutton";
 import * as THREE from "three";
 import "./Hero.scss"; // We'll define the CSS below
 
@@ -68,104 +69,49 @@ const handleScroll = () => {
 };
 
 // 2) “Fancy” Button sub-component
-function FancyButton({ children }) {
-  return (
-    <div className="btn-container connect-btn" onClick={handleScroll}>
-      <span className="btn-text">{children}</span>
-      <span className="btn-bg"></span>
-      <span className="btn-icon">
-        {/* Default arrow */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="icon-default"
-        >
-          <path d="M5 12h14"></path>
-          <path d="m12 5 7 7-7 7"></path>
-        </svg>
-        {/* Hover arrow */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="icon-hover"
-        >
-          <path d="M5 12h14"></path>
-          <path d="m12 5 7 7-7 7"></path>
-        </svg>
-      </span>
-    </div>
-  );
-}
+// function FancyButton({ children }) {
+//   return (
+//     <div className="btn-container connect-btn" onClick={handleScroll}>
+//       <span className="btn-text">{children}</span>
+//       <span className="btn-bg"></span>
+//       <span className="btn-icon">
+//         {/* Default arrow */}
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           width="18"
+//           height="18"
+//           viewBox="0 0 24 24"
+//           fill="none"
+//           stroke="currentColor"
+//           strokeWidth="2"
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//           className="icon-default"
+//         >
+//           <path d="M5 12h14"></path>
+//           <path d="m12 5 7 7-7 7"></path>
+//         </svg>
+//         {/* Hover arrow */}
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           width="18"
+//           height="18"
+//           viewBox="0 0 24 24"
+//           fill="none"
+//           stroke="currentColor"
+//           strokeWidth="2"
+//           strokeLinecap="round"
+//           strokeLinejoin="round"
+//           className="icon-hover"
+//         >
+//           <path d="M5 12h14"></path>
+//           <path d="m12 5 7 7-7 7"></path>
+//         </svg>
+//       </span>
+//     </div>
+//   );
+// }
 
-function CopyButton({ children }) {
-    const [copyStatus, setCopyStatus] = useState("Copy Email");
-  
-    const handleCopy = () => {
-        console.log(children )
-      navigator.clipboard.writeText(children).then(() => {
-        setCopyStatus("Email Copied!");
-  
-        setTimeout(() => {
-          setCopyStatus("Copy Email");
-        }, 2000);
-      }).catch((error) => {
-        console.error("Error copying text: ", error);
-      });
-    };
-  
-    return (
-      <div className="btn-container" onClick={handleCopy}>
-        <span className="btn-text">{copyStatus}</span>
-        <span className="btn-bg"></span>
-        <span className="btn-icon">
-          {/* Default copy icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="icon-default"
-          >
-            <path d="M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM5 7h11V5H5z"></path>
-          </svg>
-          {/* Hover copy icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="icon-hover"
-          >
-            <path d="M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM5 7h11V5H5z"></path>
-          </svg>
-        </span>
-      </div>
-    );
-  }
   
 
 export default function HeroSection() {
@@ -191,8 +137,8 @@ export default function HeroSection() {
     const MAX_WAVELENGTH = 650;
     const MIN_AMPLITUDE = 30;
     const MAX_AMPLITUDE = 60;
-    const MIN_OPACITY = 0.3;
-    const MAX_OPACITY = 0.5;
+    const MIN_OPACITY = 0.4;
+    const MAX_OPACITY = 0.8;
     const MIN_SPEED = 0.2;
     const MAX_SPEED = 1.0;
     const SPRING_CONSTANT = 0.02;
@@ -203,8 +149,8 @@ export default function HeroSection() {
     const MIN_WIDTH = 1;
     const MAX_WIDTH = 3;
     const LINE_COLOR = "#D76C82";
-    const BG_COLOR_BOTTOM = "#EBE8DB";
-    const BG_COLOR_TOP = "#fffdf5";//IS ACTUALLT THE BOTTOM
+    const BG_COLOR_BOTTOM = "#fffdf5";
+    const BG_COLOR_TOP = "#ffffff";//IS ACTUALLT THE BOTTOM
 
     let scene, camera, renderer;
 
@@ -492,8 +438,8 @@ export default function HeroSection() {
         <h1>Hello.<br />I am M-Ibrahim.</h1>
         <h2><Typewriter /></h2>
         <div className="btns-cont">
-            <FancyButton>Let’s Connect</FancyButton>
-            <CopyButton>m.ibrahim.intl@gmail.com</CopyButton>
+          <FancyButton onClick={() => handleScroll()}>Let’s Connect</FancyButton>
+        <FancyButton type="copy" copyText="m.ibrahim.intl@gmail.com" />
         </div>
       </div>
     </div>

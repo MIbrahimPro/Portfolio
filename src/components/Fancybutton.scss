@@ -1,0 +1,96 @@
+@use '../App' as *;
+
+
+
+
+/* -------------------------
+   Fancy Button Styles
+   (from previous snippet)
+------------------------- */
+.btns-cont{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+  .btn-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+  }
+  .btn-container:hover{
+    transform: scale(110%);
+  }
+  .connect-btn{
+      // background: #ADBBDA;
+      background: $peach;
+  }
+  .btn-text {
+    position: relative;
+    z-index: 2;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .btn-bg {
+    position: absolute;
+    inset: 0;
+    transform: translateX(45%) scale(0);
+    background: #fff;
+    border-radius: 50px;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .btn-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    z-index: 2;
+  }
+  
+  /* Default arrow */
+  .icon-default {
+    color: black;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  /* Hover arrow */
+  .icon-hover {
+    position: absolute;
+    color: black;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  /* Hover Effects */
+  .btn-container:hover .btn-bg {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  
+  .btn-container:hover .btn-text {
+    color: #000;
+  }
+  
+  .btn-container:hover .icon-default {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  
+  .btn-container:hover .icon-hover {
+    transform: translateX(0);
+    opacity: 1;
+  }
