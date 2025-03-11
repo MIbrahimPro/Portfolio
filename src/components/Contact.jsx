@@ -60,6 +60,10 @@ export default function Contact() {
     const MIN_SPEED = -0.5;
     const MAX_SPEED = -3;
 
+
+    useEffect(() => {
+
+        
     // Generate wave configurations with an interpolated y value,
     // a random starting x offset, and a random x speed.
     function generateWaveConfigs() {
@@ -75,7 +79,8 @@ export default function Contact() {
         return configs;
     }
 
-    useEffect(() => {
+
+
         let scene, camera, renderer;
 
         // ====== Initialize Three.js ======
@@ -267,7 +272,7 @@ export default function Contact() {
                 sceneRef.current.clear();
             }
         };
-    }, [generateWaveConfigs]);
+    }, []);
 
     return (
         <div className="contact-section" id="contact">
