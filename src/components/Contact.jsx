@@ -267,7 +267,7 @@ export default function Contact() {
                 sceneRef.current.clear();
             }
         };
-    }, []);
+    }, [generateWaveConfigs]);
 
     return (
         <div className="contact-section" id="contact">
