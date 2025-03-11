@@ -36,48 +36,48 @@ export default function Contact() {
             });
     };
 
-    // ====== Three.js Setup ======
-    const canvasRef = useRef(null);
-    const sceneRef = useRef(null);
-    const cameraRef = useRef(null);
-    const rendererRef = useRef(null);
-    const bgMeshRef = useRef(null);
-    const wavesRef = useRef([]);
-
-    // ====== Wave Constants ======
-    const SEGMENT_SPACING = 5;
-    const amplitude = 40;
-    const wavelength = 600;
-    const phase = 0;
-    const lineColor = "#D76C82";
-    const opacity = 0.6;
-
-    // Configure the overall wave layout.
-    const numberOfWaves = 22;
-    const firstWaveY = 666;
-    const lastWaveY = 333;
-    // For the horizontal motion animation.
-    const MIN_SPEED = -0.5;
-    const MAX_SPEED = -3;
-
 
     useEffect(() => {
 
-        
-    // Generate wave configurations with an interpolated y value,
-    // a random starting x offset, and a random x speed.
-    function generateWaveConfigs() {
-        const configs = [];
-        if (numberOfWaves < 1) return configs;
-        for (let i = 0; i < numberOfWaves; i++) {
-            const t = numberOfWaves === 1 ? 0 : i / (numberOfWaves - 1);
-            const y = firstWaveY + t * (lastWaveY - firstWaveY);
-            const xOff = Math.random() * 200; // random initial offset
-            const xSpeed = MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED);
-            configs.push({ y, xOff, xSpeed, amplitude, wavelength, phase, lineColor, opacity });
+
+        // ====== Three.js Setup ======
+        const canvasRef = useRef(null);
+        const sceneRef = useRef(null);
+        const cameraRef = useRef(null);
+        const rendererRef = useRef(null);
+        const bgMeshRef = useRef(null);
+        const wavesRef = useRef([]);
+
+        // ====== Wave Constants ======
+        const SEGMENT_SPACING = 5;
+        const amplitude = 40;
+        const wavelength = 600;
+        const phase = 0;
+        const lineColor = "#D76C82";
+        const opacity = 0.6;
+
+        // Configure the overall wave layout.
+        const numberOfWaves = 22;
+        const firstWaveY = 666;
+        const lastWaveY = 333;
+        // For the horizontal motion animation.
+        const MIN_SPEED = -0.5;
+        const MAX_SPEED = -3;
+
+        // Generate wave configurations with an interpolated y value,
+        // a random starting x offset, and a random x speed.
+        function generateWaveConfigs() {
+            const configs = [];
+            if (numberOfWaves < 1) return configs;
+            for (let i = 0; i < numberOfWaves; i++) {
+                const t = numberOfWaves === 1 ? 0 : i / (numberOfWaves - 1);
+                const y = firstWaveY + t * (lastWaveY - firstWaveY);
+                const xOff = Math.random() * 200; // random initial offset
+                const xSpeed = MIN_SPEED + Math.random() * (MAX_SPEED - MIN_SPEED);
+                configs.push({ y, xOff, xSpeed, amplitude, wavelength, phase, lineColor, opacity });
+            }
+            return configs;
         }
-        return configs;
-    }
 
 
 
