@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useEffect, useState } from "react";
 import FancyButton from "./Fancybutton";
 import * as THREE from "three";
-import "./Hero.scss"; // We'll define the CSS below
+import "./Hero.scss"; 
 
 // 1) Typewriter sub-component
 function Typewriter() {
@@ -68,50 +68,6 @@ const handleScroll = () => {
   }
 };
 
-// 2) “Fancy” Button sub-component
-// function FancyButton({ children }) {
-//   return (
-//     <div className="btn-container connect-btn" onClick={handleScroll}>
-//       <span className="btn-text">{children}</span>
-//       <span className="btn-bg"></span>
-//       <span className="btn-icon">
-//         {/* Default arrow */}
-//         <svg
-//           xmlns="http://www.w3.org/2000/svg"
-//           width="18"
-//           height="18"
-//           viewBox="0 0 24 24"
-//           fill="none"
-//           stroke="currentColor"
-//           strokeWidth="2"
-//           strokeLinecap="round"
-//           strokeLinejoin="round"
-//           className="icon-default"
-//         >
-//           <path d="M5 12h14"></path>
-//           <path d="m12 5 7 7-7 7"></path>
-//         </svg>
-//         {/* Hover arrow */}
-//         <svg
-//           xmlns="http://www.w3.org/2000/svg"
-//           width="18"
-//           height="18"
-//           viewBox="0 0 24 24"
-//           fill="none"
-//           stroke="currentColor"
-//           strokeWidth="2"
-//           strokeLinecap="round"
-//           strokeLinejoin="round"
-//           className="icon-hover"
-//         >
-//           <path d="M5 12h14"></path>
-//           <path d="m12 5 7 7-7 7"></path>
-//         </svg>
-//       </span>
-//     </div>
-//   );
-// }
-
   
 
 export default function HeroSection() {
@@ -154,6 +110,7 @@ export default function HeroSection() {
 
     let scene, camera, renderer;
 
+    const isTouchDevice = !window.matchMedia("(pointer: fine)").matches;
     // =========== INIT THREE.JS ===========
     function initThree() {
       scene = new THREE.Scene();
@@ -416,12 +373,17 @@ export default function HeroSection() {
       mouseRef.current.x = e.clientX;
       mouseRef.current.y = window.innerHeight - e.clientY;
     };
-    window.addEventListener("mousemove", handleMouseMove);
+    if (!isTouchDevice) {
+      window.addEventListener("mousemove", handleMouseMove);
+    }
 
     // Cleanup on unmount
+
     return () => {
       window.removeEventListener("resize", onWindowResize);
+    if (!isTouchDevice) {
       window.removeEventListener("mousemove", handleMouseMove);
+    }
       rendererRef.current.dispose();
       sceneRef.current.clear();
     };
@@ -438,7 +400,7 @@ export default function HeroSection() {
         <h1>Hello.<br />I am M-Ibrahim.</h1>
         <h2><Typewriter /></h2>
         <div className="btns-cont">
-          <FancyButton onClick={() => handleScroll()}>Let’s Connect</FancyButton>
+          <FancyButton color="#e09ba9" onClick={() => handleScroll()}>Let’s Connect</FancyButton>
         <FancyButton type="copy" copyText="m.ibrahim.intl@gmail.com" />
         </div>
       </div>

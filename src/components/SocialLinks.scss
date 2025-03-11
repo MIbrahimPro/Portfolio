@@ -1,35 +1,93 @@
 @use '../App' as *;
 
 
-.social-links {
-    position: fixed;
-    bottom: 0px;
-    right: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    z-index: 100;
+// .social-links {
+//     position: fixed;
+//     bottom: 0px;
+//     right: 50px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 15px;
+//     z-index: 100;
 
-    .dotted-line {
-        width: 0px;
-        height: 70px; // Adjust length as needed
-        border-left: 2px dotted grey;
+//     .dotted-line {
+//         width: 0px;
+//         height: 70px; // Adjust length as needed
+//         border-left: 2px dotted grey;
 
-        margin-top: 5px;
-    }
+//         margin-top: 5px;
+//     }
 
 
-    a {
-        color: gray;
-        font-size: 32px;
+//     a {
+//         color: gray;
+//         font-size: 32px;
 
-        &:hover {
-            color: $dmaroon;
-            transform: scale(110%);
-        }
-    }
+//         &:hover {
+//             color: $dmaroon;
+//             transform: scale(110%);
+//         }
+//     }
 
     
 
+// }
+
+
+
+// sociallinks.scss
+// @import 'variables';
+
+.social-links {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 100;
+
+  a {
+    color: gray;
+    font-size: 32px;
+    &:hover {
+      color: $dmaroon;
+      transform: scale(1.1);
+    }
+  }
+
+  .dotted-line {
+    width: 0;
+    height: 70px;
+    border-left: 2px dotted grey;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-links {
+    right: 20px;
+    bottom: 10px;
+    a {
+      font-size: 28px;
+    }
+    .dotted-line {
+      height: 50px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .social-links {
+    right: 10px;
+    bottom: 5px;
+    a {
+      font-size: 24px;
+    }
+    .dotted-line {
+      height: 40px;
+    }
+  }
 }

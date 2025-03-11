@@ -1,22 +1,60 @@
 @use '../App' as *;
 
 
-.navbar {
-    position: fixed;
-    z-index: 100;
-    padding:36px 0px 0px 56px;
-    // backdrop-filter: blur(5px);
-    width: 100%;
-}
-.navbar-logo {
+// .navbar {
+//     position: fixed;
+//     z-index: 100;
+//     padding:36px 0px 0px 56px;
+//     // backdrop-filter: blur(5px);
+//     width: 100%;
+// }
+// .navbar-logo {
 
+//     font-family: "Poppins", sans-serif;
+//     font-size: 48px;
+//     font-weight: 600;
+//     color: $dmaroon;
+
+
+//     .grey {
+//         color: $maroon;
+//     }
+// }
+
+
+
+// navbar.scss
+// @import 'variables';
+
+.navbar {
+  position: fixed;
+  z-index: 100;
+  padding: 36px 0 0 56px;
+  width: 100%;
+
+  .navbar-logo {
     font-family: "Poppins", sans-serif;
     font-size: 48px;
     font-weight: 600;
     color: $dmaroon;
 
-
     .grey {
-        color: $maroon;
+      color: $maroon;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    padding: 10px;
+    .navbar-logo {
+      font-size: 32px;
+    }
+  }
 }

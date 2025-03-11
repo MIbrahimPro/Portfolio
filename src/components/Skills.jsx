@@ -1,5 +1,5 @@
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGit, FaGithub, FaJava, FaLinux } from "react-icons/fa";
-import {  SiNextdotjs, SiTailwindcss, SiExpress, SiMongodb,  SiPostgresql, SiPostman} from "react-icons/si";
+import {  SiTailwindcss, SiExpress, SiMongodb,  SiPostgresql, SiPostman} from "react-icons/si";
 // import { SiTypescript, SiNextdotjs, SiTailwindcss, SiFramer, SiShadcnui, SiExpress, SiMongodb, SiMysql, SiPostgresql, SiPrisma, SiZod, SiVercel, SiPostman, SiPnpm } from "react-icons/si";
 import "./Skills.scss";
 
@@ -9,7 +9,7 @@ const skills = [
   { name: "JavaScript", icon: <FaJs color="#F7DF1E" /> },
 //   { name: "TypeScript", icon: <SiTypescript color="#3178C6" /> },
   { name: "ReactJS", icon: <FaReact color="#61DAFB" /> },
-  { name: "NextJS", icon: <SiNextdotjs color="black" /> },
+  // { name: "NextJS", icon: <SiNextdotjs color="black" /> },
   { name: "Tailwind CSS", icon: <SiTailwindcss color="#06B6D4" /> },
 //   { name: "Framer Motion", icon: <SiFramer color="#0055FF" /> },
 //   { name: "Shadcn", icon: <SiShadcnui color="black" /> },

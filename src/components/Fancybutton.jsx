@@ -7,6 +7,10 @@ export default function FancyButton({
   type = "button", // 'button' or 'copy'
   copyText = "", // Used if type='copy'
   onClick = () => {}, // Custom onClick handler (if needed)
+  color='#EBE8DB',
+  width='fit-content', 
+  maxwidth='fit-content', 
+  
 }) {
   const [copyStatus, setCopyStatus] = useState("Copy Email");
 
@@ -21,7 +25,7 @@ export default function FancyButton({
   };
 
   return (
-    <div className="btn-container connect-btn" onClick={handleAction}>
+    <div className="btn-container" style={{background: color, width:width, maxWidth:maxwidth, }} onClick={handleAction}>
       <span className="btn-text">{type === "copy" ? copyStatus : children}</span>
       <span className="btn-bg"></span>
       <span className="btn-icon">

@@ -1,6 +1,68 @@
-/* Import Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+// /* Import Poppins */
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
+// $white: #fff;
+// $black: #000;
+// $whitish: #fffdf5;
+// $light: #EBE8DB;
+// $lpeach: #e09ba9;
+// $peach: #D76C82;
+// $maroon: #B03052;
+// $dmaroon: #3D0301;
+
+
+
+
+// /* Global resets (optional) */
+// * {
+//     box-sizing: border-box;
+//     margin: 0;
+//     padding: 0;
+//     transition: all 250ms ease-in-out;
+//     cursor: none;
+// }
+
+// body {
+//     width: 100%;
+//     height: 100dvh;
+//     overflow-x: hidden;
+//     background-color: transparent;
+//     font-family: "Poppins", sans-serif;
+// }
+
+
+// .cursor {
+//     position: fixed;
+//     z-index: 200;
+//     width: 7px;
+//     height: 7px;
+//     background: black;
+//     background-clip: content-box;
+//     border-radius: 50%;
+//     border: 2px solid black;
+//     box-sizing: content-box;
+//     padding: 8.5px;
+//     pointer-events: none;
+//     transform-origin: 50% 50%;
+//     transition: transform 0.0s ease-out;
+//     /* Smooth follow effect */
+// }
+
+// .touch-screen.cursor {
+//     display: none;
+// }
+
+
+// .app {
+//     position: relative;
+// }
+
+// // .app{
+// //     background-color: #fffdf5;
+// // }
+
+
+// variables.scss
 $white: #fff;
 $black: #000;
 $whitish: #fffdf5;
@@ -11,47 +73,79 @@ $maroon: #B03052;
 $dmaroon: #3D0301;
 
 
+// app.scss
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 
-/* Global resets (optional) */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     transition: all 250ms ease-in-out;
+    cursor: none;
 }
 
 body {
     width: 100%;
     height: 100dvh;
     overflow-x: hidden;
-    background-color: transparent;
-    cursor: none;
+    background-color: $light; // extra sides show the light background on screens > 1800px
     font-family: "Poppins", sans-serif;
 }
 
 
+
+.App {
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Global canvas used in multiple components */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Custom Cursor */
 .cursor {
     position: fixed;
     z-index: 200;
     width: 7px;
     height: 7px;
-    background: black;
+    background-color: black;
     background-clip: content-box;
     border-radius: 50%;
     border: 2px solid black;
-    box-sizing: content-box;
     padding: 8.5px;
     pointer-events: none;
     transform-origin: 50% 50%;
     transition: transform 0.0s ease-out;
-    /* Smooth follow effect */
+
+    &.touch-screen {
+        display: none;
+    }
 }
 
-.app {
-    position: relative;
+.spacerdiv {
+    display: block;
 }
 
-// .app{
-//     background-color: #fffdf5;
-// }
+
+@media (max-width: 400px) {
+
+    html,
+    body {
+        min-height: 101vh;
+        overflow-y: scroll;
+    }
+
+    .spacerdiv {
+        height: 20vh;
+        background-color: $light;
+    }
+}
