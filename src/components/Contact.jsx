@@ -36,9 +36,7 @@ export default function Contact() {
             });
     };
 
-
-    useEffect(() => {
-
+    
 
         // ====== Three.js Setup ======
         const canvasRef = useRef(null);
@@ -47,6 +45,9 @@ export default function Contact() {
         const rendererRef = useRef(null);
         const bgMeshRef = useRef(null);
         const wavesRef = useRef([]);
+
+    useEffect(() => {
+
 
         // ====== Wave Constants ======
         const SEGMENT_SPACING = 5;
