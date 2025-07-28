@@ -301,7 +301,7 @@ export default function Contact() {
                     <FancyButton width="100%" maxwidth="500px" color="#D76C82" >Send Message</FancyButton>
                 </button>
 
-                <FancyButton width="100%" maxwidth="500px" type="copy" copyText="m.ibrahim.intl@gmail.com" onClick={(e) => e.stopPropagation()} />
+                <FancyButton width="100%" maxwidth="500px" type="copy" copyText="mibrahimpro.1@gmail.com" onClick={(e) => e.stopPropagation()} />
 
             </form>
         </div>

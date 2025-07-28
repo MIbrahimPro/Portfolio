@@ -401,7 +401,7 @@ export default function HeroSection() {
         <h2><Typewriter /></h2>
         <div className="btns-cont">
           <FancyButton color="#e09ba9" onClick={() => handleScroll()}>Let’s Connect</FancyButton>
-        <FancyButton type="copy" copyText="m.ibrahim.intl@gmail.com" />
+        <FancyButton type="copy" copyText="mibrahimpro.1@gmail.com" />
         </div>
       </div>
     </div>
